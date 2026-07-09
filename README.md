@@ -108,7 +108,4 @@ gex/
 ## License
 
 MIT License
-=======
-
 Donate: https://buymeacoffee.com/serhatstal
->>>>>>> 9ff56c16591ab3a9a92a402a1a80a25bd9df62c5
