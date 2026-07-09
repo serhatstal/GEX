@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-# Gemini Bulk Delete - Chrome Extension
-=======
+
 # GEX (Gemini Bulk Delete) - Chrome Extension
->>>>>>> 9ff56c16591ab3a9a92a402a1a80a25bd9df62c5
 
 A Google Chrome extension to bulk delete your Gemini (gemini.google.com) conversations.
 
@@ -111,7 +108,6 @@ gex/
 ## License
 
 MIT License
-<<<<<<< HEAD
 =======
 
 Donate: https://buymeacoffee.com/serhatstal
