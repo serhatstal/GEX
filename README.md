@@ -108,4 +108,4 @@ gex/
 
 MIT License
 
-Donate: https://buymeacoffee.com/serhatonia
+Donate: https://buymeacoffee.com/serhatstal
