@@ -1,0 +1,366 @@
+.gbd-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.gbd-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #1a73e8;
+  border-radius: 3px;
+  margin: 0;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+.gbd-checkbox:hover {
+  transform: scale(1.15);
+}
+
+.gbd-checkbox-wrapper:hover {
+  background: rgba(26, 115, 232, 0.08);
+  border-radius: 4px;
+}
+
+.gbd-item-selected {
+  background: rgba(26, 115, 232, 0.06) !important;
+  border-left: 3px solid #1a73e8 !important;
+}
+
+.gbd-floating-toolbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a73e8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 99999;
+  font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+  font-size: 14px;
+  animation: gbd-slide-up 0.3s ease-out;
+}
+
+@keyframes gbd-slide-up {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.gbd-floating-toolbar button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.gbd-floating-toolbar button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.gbd-floating-toolbar .gbd-delete-btn {
+  background: #ea4335;
+}
+
+.gbd-floating-toolbar .gbd-delete-btn:hover {
+  background: #d33426;
+}
+
+.gbd-floating-toolbar .gbd-count {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.gbd-progress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+}
+
+.gbd-progress-dialog {
+  background: #292a2e;
+  border-radius: 16px;
+  padding: 32px;
+  min-width: 380px;
+  max-width: 480px;
+  color: #e8eaed;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.gbd-progress-dialog h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.gbd-progress-bar-container {
+  background: #3c4043;
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.gbd-progress-bar {
+  height: 100%;
+  background: #1a73e8;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+.gbd-progress-text {
+  font-size: 14px;
+  color: #9aa0a6;
+  margin: 8px 0;
+}
+
+.gbd-progress-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.gbd-progress-actions button {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.gbd-cancel-btn {
+  background: #3c4043;
+  color: #e8eaed;
+}
+
+.gbd-cancel-btn:hover {
+  background: #5f6368;
+}
+
+.gbd-result-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+}
+
+.gbd-result-content {
+  background: #292a2e;
+  border-radius: 16px;
+  padding: 32px;
+  min-width: 380px;
+  max-width: 480px;
+  color: #e8eaed;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.gbd-result-content h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.gbd-result-stats {
+  display: flex;
+  gap: 24px;
+  margin: 16px 0;
+}
+
+.gbd-result-stat {
+  text-align: center;
+}
+
+.gbd-result-stat .number {
+  font-size: 32px;
+  font-weight: 700;
+  display: block;
+}
+
+.gbd-result-stat .label {
+  font-size: 12px;
+  color: #9aa0a6;
+}
+
+.gbd-result-stat.success .number {
+  color: #34a853;
+}
+
+.gbd-result-stat.error .number {
+  color: #ea4335;
+}
+
+.gbd-error-list {
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 12px 0;
+  padding: 12px;
+  background: #202124;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.gbd-error-list p {
+  margin: 4px 0;
+  color: #ea4335;
+}
+
+.gbd-result-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.gbd-result-actions button {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  background: #1a73e8;
+  color: white;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.gbd-result-actions button:hover {
+  background: #1557b0;
+}
+
+.gbd-confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999998;
+  font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+}
+
+.gbd-confirm-dialog {
+  background: #292a2e;
+  border-radius: 16px;
+  padding: 32px;
+  min-width: 360px;
+  max-width: 440px;
+  color: #e8eaed;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.gbd-confirm-dialog h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.gbd-confirm-dialog p {
+  color: #9aa0a6;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.gbd-confirm-dialog .gbd-warning-text {
+  color: #fbbc04;
+  font-weight: 500;
+  margin: 12px 0;
+}
+
+.gbd-confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.gbd-confirm-actions button {
+  padding: 10px 28px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.gbd-confirm-cancel {
+  background: #3c4043;
+  color: #e8eaed;
+}
+
+.gbd-confirm-cancel:hover {
+  background: #5f6368;
+}
+
+.gbd-confirm-delete {
+  background: #ea4335;
+  color: white;
+}
+
+.gbd-confirm-delete:hover {
+  background: #d33426;
+}
+
+.gbd-confirm-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #5f6368;
+  background: #202124;
+  color: #e8eaed;
+  font-size: 14px;
+  margin-top: 12px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.gbd-confirm-input:focus {
+  outline: none;
+  border-color: #1a73e8;
+}

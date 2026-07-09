@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Bulk Delete</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <div class="logo-wrapper">
+        <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#4285F4"/>
+          <path d="M2 17L12 22L22 17" stroke="#34A853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="#FBBC05" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h1>Gemini Bulk Delete</h1>
+      </div>
+    </header>
+
+    <div id="not-gemini" class="status-panel hidden">
+      <div class="status-icon warning">!</div>
+      <p>This extension only works on <strong>gemini.google.com</strong></p>
+      <a href="https://gemini.google.com" target="_blank" class="link-btn">Go to Gemini</a>
+    </div>
+
+    <div id="content-not-ready" class="status-panel hidden">
+      <div class="status-icon info">i</div>
+      <p>Content script not loaded. Please refresh the page.</p>
+      <button id="reload-btn" class="action-btn secondary">Refresh Page</button>
+    </div>
+
+    <div id="main-panel" class="hidden">
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-number" id="total-count">0</span>
+          <span class="stat-label">Total Chats</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" id="selected-count">0</span>
+          <span class="stat-label">Selected</span>
+        </div>
+      </div>
+
+      <div class="actions-grid">
+        <button id="select-all-btn" class="action-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 11 12 14 22 4"></polyline>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+          Select All
+        </button>
+        <button id="deselect-all-btn" class="action-btn secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+          </svg>
+          Deselect All
+        </button>
+      </div>
+
+      <button id="delete-btn" class="action-btn danger" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          <line x1="10" y1="11" x2="10" y2="17"></line>
+          <line x1="14" y1="11" x2="14" y2="17"></line>
+        </svg>
+        Delete Selected
+      </button>
+
+      <div id="processing-panel" class="hidden">
+        <div class="progress-info">
+          <span id="progress-text">Deleting...</span>
+          <span id="progress-count">0/0</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar"></div>
+        </div>
+        <button id="cancel-btn" class="action-btn secondary">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <footer class="popup-footer">
+      <p>v1.0.0 &middot; Gemini Bulk Delete github.com/serhatstal</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
